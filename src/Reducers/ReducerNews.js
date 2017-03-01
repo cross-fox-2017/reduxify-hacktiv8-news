@@ -13,15 +13,17 @@ let data = [
   }
 ]
 
-export default (state = data, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case 'FILTER_NEWS':
-        let cut = new RegExp(`${action.keyword}`, 'i')
-        return (
-          state.filter((data) => cut.test(data.title))
-        )
-      break;
+        if (action.keyword){
+          let cut = new RegExp(`${action.keyword}`, 'i')
+          return (
+            state.filter((item) => cut.test(item.title))
+          )
+        }
+        return data
     default:
-      return state
+      return data
   }
 }
