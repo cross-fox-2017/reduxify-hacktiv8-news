@@ -1,4 +1,4 @@
-export const searchNews = (searchKey) => {
+export const handleChangeSearch = (searchKey) => {
   return {
     type: 'SET_SEARCH_KEY',
     payload: searchKey

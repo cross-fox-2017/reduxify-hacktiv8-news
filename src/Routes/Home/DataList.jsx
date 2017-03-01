@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-// news={this.state.news.)
-
 const DataList = (props) => {
   return (
     <ul>
