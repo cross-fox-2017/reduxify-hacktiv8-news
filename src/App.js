@@ -6,7 +6,7 @@ import {
   Link
 } from 'react-router-dom'
 import './App.css';
-// import News from './Routes/News'
+import News from './Routes/News'
 import People from './Routes/People'
 
 class App extends Component {
@@ -25,7 +25,7 @@ class App extends Component {
 
           <hr/>
 
-          <Route exact path="/" />
+          <Route exact path="/" component={News}/>
           <Route path="/people" component={People}/>
         </div>
       </Router>
