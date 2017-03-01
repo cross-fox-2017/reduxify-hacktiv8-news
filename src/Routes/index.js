@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 import Home from './Home'
 import About from './About.jsx'
 
-export const Routes = () => {
+const Routes = () => {
   return (
     <div>
       <Route exact path='/' component={Home} />
@@ -12,3 +12,5 @@ export const Routes = () => {
     </div>
   )
 }
+
+export default Routes

@@ -5,7 +5,7 @@ const style = {
   display: 'inline-block'
 }
 
-export const Menu = () => (
+const Menu = () => (
   <ul>
     <li style={style}>
       <Link to='/'> Home
@@ -18,3 +18,5 @@ export const Menu = () => (
     </li>
   </ul>
 )
+
+export default Menu

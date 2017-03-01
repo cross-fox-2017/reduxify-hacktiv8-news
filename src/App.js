@@ -3,8 +3,8 @@ import logo from './logo.svg'
 import './App.css'
 
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Menu } from './components'
-import { Routes } from './routes'
+import Menu from './components/Menu'
+import Routes from './routes'
 
 const App = () => (
   <div className='App'>
