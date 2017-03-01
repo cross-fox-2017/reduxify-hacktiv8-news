@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import { DataList } from './DataList.jsx'
-import { DataSearch } from './DataSearch.jsx'
+import DataList from './DataList.jsx'
+import DataSearch from './DataSearch.jsx'
 
 const style = {
   margin: '30px 150px'
@@ -42,8 +42,8 @@ export class Home extends Component {
   render () {
     return (
       <div className='News-list' style={style}>
-        <DataSearch searchKey={this.state.searchKey} handleChange={this.handleChange.bind(this)} />
-        <DataList news={this.state.news.filter((eachNews) => (eachNews.title === null ? '' : eachNews.title).match(new RegExp(this.state.searchKey, 'i')))} />
+        <DataSearch />
+        <DataList />
       </div>
     )
   }
