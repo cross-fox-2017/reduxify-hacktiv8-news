@@ -5,10 +5,11 @@ import {
   Route,
   Link
 } from 'react-router-dom'
-import News from './Routes/News'
-import People from './Routes/People'
+import './App.css';
+// import News from './Routes/News'
+// import People from './Routes/People'
 
-class App extends Component{
+class App extends Component {
   render(){
     return (
       <Router>
@@ -24,12 +25,13 @@ class App extends Component{
 
           <hr/>
 
-          <Route exact path="/" component={News}/>
-          <Route path="/people" component={People}/>
+          <Route exact path="/" />
+          <Route path="/people" />
         </div>
       </Router>
     )
   }
 }
+
 
 export default App

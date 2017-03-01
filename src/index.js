@@ -5,13 +5,13 @@ import { createStore, applyMiddleware } from 'redux'
 import App from './App'
 import './index.css';
 
-import reducers from './Reducers'
-
-const createStoreMiddleware = applyMiddleware()(createStore)
+// import rootReducers from './Reducers'
+//
+// const createStoreMiddleware = applyMiddleware()(createStore)
 
 ReactDOM.render(
-  <Provider store={createStoreMiddleware(reducers)}>
-    <App />
-  </Provider>,
+  // <Provider store={createStoreMiddleware(rootReducers)}>
+    <App />,
+  // </Provider>
   document.getElementById('root')
 );
