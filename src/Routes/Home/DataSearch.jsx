@@ -7,7 +7,7 @@ const styles = {
   padding: '0px 10px'
 }
 
-import { handleChangeSearch, resetSearchKey } from '../../actions'
+import { setSearchKey, resetSearchKey } from '../../actions'
 
 const DataSearch = (props) => {
   return (
@@ -20,7 +20,7 @@ const DataSearch = (props) => {
           style={styles}
           type='text'
           value={props.searchKey}
-          onChange={event => props.handleChangeSearch(event.target.value)} />
+          onChange={event => props.setSearchKey(event.target.value)} />
       </form>
       {props.searchKey !== '' ? <h6>Search Result for: {props.searchKey}</h6> : <h6>Showing All Results</h6>}
       {props.searchKey !== '' ? <button className='btn' onClick={props.resetSearchKey}>
@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({handleChangeSearch, resetSearchKey}, dispatch)
+  return bindActionCreators({setSearchKey, resetSearchKey}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataSearch)
