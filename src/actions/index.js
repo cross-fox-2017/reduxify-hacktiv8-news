@@ -1,6 +1,16 @@
-export const actionSearchNews = (title) => {
+export const actionSearchNews = (title,news) => {
   return {
     type: 'SEARCH_NEWS',
-    payload: title
+    payload:{
+      title:title,
+      news:news
+    }
+  }
+}
+
+export const actionSearchPeople = (name) => {
+  return {
+    type: 'SEARCH_PEOPLE',
+    payload: name
   }
 }

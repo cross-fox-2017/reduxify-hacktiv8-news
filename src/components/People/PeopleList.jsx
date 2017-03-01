@@ -18,7 +18,10 @@ class PeopleList extends Component {
 
 const mapStateToProps = state => {
   return {
-    people: state.people
+    people: state.people.filter(
+      orang => orang.name.toLowerCase()
+      .match(state.searchPeople.toLowerCase())
+    )
   }
 }
 

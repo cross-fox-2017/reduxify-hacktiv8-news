@@ -10,8 +10,7 @@ const FormSearchNews = (props) => (
       <br/>
       Search News:<br/>
     <input
-      onChange={event => props.actionSearchNews(event.target.value)}
-      value={props.searchTitle}
+      onChange={event => props.actionSearchNews(event.target.value, props.news)}
       type="text"
     /><br/>
     </form>
@@ -20,7 +19,8 @@ const FormSearchNews = (props) => (
 
 const mapStateToProps = state => {
   return {
-    searchTitle: state.searchNews
+    searchTitle: state.searchNews,
+    news: state.news
   }
 }
 

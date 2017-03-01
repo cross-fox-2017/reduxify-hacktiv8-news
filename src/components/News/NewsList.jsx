@@ -18,7 +18,7 @@ class NewsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    news: state.news.filter(berita => berita.title.toLowerCase().match(state.searchNews.toLowerCase()))
+    news: state.searchNews
   }
 }
 
