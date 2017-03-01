@@ -19,7 +19,9 @@ const FormSearchNews = (props) => (
 )
 
 const mapStateToProps = state => {
-  searchTitle: state.searchNews
+  return {
+    searchTitle: state.searchNews
+  }
 }
 
 const mapDispatchToProps = dispatch => (
