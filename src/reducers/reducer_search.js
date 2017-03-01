@@ -1,6 +1,6 @@
 const initialState = ''
 
-export const SearchReducer = (state = initialState , action) => {
+const SearchReducer = (state = initialState , action) => {
   switch (action.type) {
     case 'SET_SEARCH_KEY':
       return action.payload
@@ -10,3 +10,5 @@ export const SearchReducer = (state = initialState , action) => {
       return state
   }
 }
+
+export default SearchReducer
