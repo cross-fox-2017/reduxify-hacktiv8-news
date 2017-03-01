@@ -1,22 +1,23 @@
-// export default (state = [], action) => {
-//   switch (action.type) {
-//     case 'LIST_PEOPLE':
-//         return action
-//       break;
-//     default:
-//       return state
-//   }
-// }
-
-export default () => {
-    return [
+let data =  [
     {
-      name: 'React',
+      name: 'LUKE',
       id: 0
     },
     {
-      name: 'Redux',
+      name: 'SKY',
       id: 1
+    },
+    {
+      name: 'Walker',
+      id: 2
     }
   ]
+
+export default (state = data, action) => {
+  switch (action.type) {
+    case 'FETCH_DATA':
+        return state.concat(action.data)
+    default:
+      return state
+  }
 }

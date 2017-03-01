@@ -4,3 +4,10 @@ export const typeSearch = (keyword) => {
     keyword
   }
 }
+
+export const fetchData = (data) => {
+  return {
+    type: 'FETCH_DATA',
+    data
+  }
+}
