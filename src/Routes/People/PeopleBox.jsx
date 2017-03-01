@@ -1,11 +1,30 @@
 import React from 'react'
-import {PeopleList} from './PeopleList'
+import { connect } from 'react-redux'
 
-export const PeopleBox = (props) => {
-  return (
-    <div>
-      <h1>People</h1>
-      <PeopleList list={props}/>
-    </div>
-  )
+class PeopleBox extends React.Component {
+  render(){
+    return (
+      <div>
+        <h1>People</h1>
+          <ul>
+            {this.props.people.map((item, index)=>{
+              return (
+                  <li key={index}>
+                    {item.name}
+                  </li>
+                )
+              })
+            }
+          </ul>
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    people: state.people
+  }
+}
+
+export default connect(mapStateToProps)(PeopleBox)

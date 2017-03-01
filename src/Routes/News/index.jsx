@@ -28,7 +28,7 @@ class News extends Component {
   }
   handleForm(event){
     event.preventDefault()
-    this.letFetch()
+    // this.letFetch()
   }
   handleChange(event){
     this.setState({
@@ -39,25 +39,25 @@ class News extends Component {
     let cut = new RegExp(`${this.state.search}`, 'i')
     return cut.test(item)
   }
-  componentDidMount(){
-    this.letFetch()
-  }
-  letFetch(){
-    const that = this
-    let uri = encodeURI(this.state.search)
-    fetch(`https://hn.algolia.com/api/v1/search?query=${uri}`)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(data){
-        that.setState({
-          data : data.hits
-        })
-      })
-      .catch(function(err){
-        throw err
-      })
-  }
+  // componentDidMount(){
+  //   this.letFetch()
+  // }
+  // letFetch(){
+  //   const that = this
+  //   let uri = encodeURI(this.state.search)
+  //   fetch(`https://hn.algolia.com/api/v1/search?query=${uri}`)
+  //     .then(function(response) {
+  //       return response.json()
+  //     })
+  //     .then(function(data){
+  //       that.setState({
+  //         data : data.hits
+  //       })
+  //     })
+  //     .catch(function(err){
+  //       throw err
+  //     })
+  // }
   render() {
     return (
       <div className="App">

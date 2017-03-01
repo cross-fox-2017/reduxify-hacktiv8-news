@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import './App.css';
 // import News from './Routes/News'
-// import People from './Routes/People'
+import People from './Routes/People'
 
 class App extends Component {
   render(){
@@ -26,7 +26,7 @@ class App extends Component {
           <hr/>
 
           <Route exact path="/" />
-          <Route path="/people" />
+          <Route path="/people" component={People}/>
         </div>
       </Router>
     )
