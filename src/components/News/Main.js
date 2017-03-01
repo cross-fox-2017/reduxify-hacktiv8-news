@@ -14,7 +14,6 @@ class Main extends Component {
         <Search />
         <ul className='center'>
           {this.props.news
-             .filter(item => new RegExp(this.props.searchKey, 'i').test(item.title))
              .map((item, index) => {
                return (
                  <li key={index}>
@@ -32,8 +31,7 @@ class Main extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    news: state.news,
-    searchKey: state.searchKeyword
+    news: state.searchKeyword
   }
 }
 

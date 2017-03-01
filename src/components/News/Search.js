@@ -7,14 +7,21 @@ const Search = (props) => {
   return (
     <div className='search-news'>
       <form>
-        <input type='text' onChange={e => props.searchNews(e.target.value)} />
+        <input type='text' onChange={e => props.searchNews(e.target.value, props.news, props.keyword)} />
       </form>
     </div>
   )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    news: state.news,
+    keyword: state.searchKeyword
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({searchNews}, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
