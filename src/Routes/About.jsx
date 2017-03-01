@@ -2,29 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class About extends Component {
-  // constructor () {
-  //   super()
-  //   this.state = {
-  //     peoples: []
-  //   }
-  // }
-  //
-  // componentDidMount () {
-  //   this.fetchPeoples()
-  // }
-  //
-  // fetchPeoples () {
-  //   fetch('https://swapi.co/api/people/')
-  //     .then((response) => {
-  //       return response.json()
-  //     })
-  //     .then((resp) => {
-  //       this.setState({
-  //         peoples: resp.results
-  //       })
-  //     })
-  // }
-
   render () {
     return (
       <div>

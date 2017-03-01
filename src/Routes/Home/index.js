@@ -7,38 +7,7 @@ const style = {
   margin: '30px 150px'
 }
 
-export class Home extends Component {
-  constructor () {
-    super()
-    this.state = {
-      news: [],
-      searchKey: ''
-    }
-  }
-
-  handleChange (event) {
-    this.setState({
-      searchKey: event.target.value
-    })
-    this.fetchNews(event.target.value)
-  }
-
-  componentDidMount () {
-    this.fetchNews('')
-  }
-
-  fetchNews (searchQuery) {
-    fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURI(searchQuery)}`)
-      .then((response) => {
-        return response.json()
-      })
-      .then((resp) => {
-        this.setState({
-          news: resp.hits
-        })
-      })
-  }
-
+class Home extends Component {
   render () {
     return (
       <div className='News-list' style={style}>
@@ -48,3 +17,5 @@ export class Home extends Component {
     )
   }
 }
+
+export default Home
