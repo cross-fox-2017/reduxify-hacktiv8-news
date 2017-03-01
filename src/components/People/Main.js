@@ -1,39 +1,23 @@
 import React, { Component } from 'react'
 import '../../App.css'
+import { connect } from 'react-redux'
 
 import { Header } from '../Header/Header'
 
 class People extends Component {
-  constructor () {
-    super()
-    this.state = {
-      PeopleList: []
-    }
-  }
-
-  componentDidMount () {
-    fetch(`http://swapi.co/api/people/`)
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        this.setState({
-          PeopleList: data.results
-        })
-      })
-  }
-
   render () {
     return (
       <div className='App'>
         <Header />
         <h1>Hacktiv8 Peoples</h1>
         <ul className='center'>
-          {this.state.PeopleList
+          {this.props.people
              .map((item, index) => {
                return (
                  <p key={index}>
-                   {item.name}
+                   <a href={item.url}>
+                     {item.name}
+                   </a>
                  </p>
                )
              })}
@@ -43,4 +27,10 @@ class People extends Component {
   }
 }
 
-export default People
+const mapStateToProps = (state) => {
+  return {
+    people: state.people
+  }
+}
+
+export default connect(mapStateToProps)(People)
