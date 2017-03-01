@@ -1,8 +1,12 @@
 const initialState = ''
 
 export const SearchReducer = (state = initialState , action) => {
-  if (action.type === 'SEARCHED_NEWS') {
-    return action.payload
+  switch (action.type) {
+    case 'SET_SEARCH_KEY':
+      return action.payload
+    case 'RESET_SEARCH_KEY':
+      return ''
+    default:
+      return state
   }
-  return state
 }

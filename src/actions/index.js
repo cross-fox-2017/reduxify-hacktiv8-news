@@ -1,6 +1,12 @@
-export const searchNews = (news) => {
+export const searchNews = (searchKey) => {
   return {
-    type: 'SEARCHED_NEWS',
-    payload: news
+    type: 'SET_SEARCH_KEY',
+    payload: searchKey
+  }
+}
+
+export const resetSearchKey = () => {
+  return {
+    type: 'RESET_SEARCH_KEY'
   }
 }

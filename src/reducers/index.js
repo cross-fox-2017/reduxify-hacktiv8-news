@@ -4,8 +4,7 @@ import { SearchReducer } from './reducer_search.js'
 
 const rootReducers = combineReducers({
   news: NewsReducer,
-  searchKey: SearchReducer,
-  handleChange: SearchReducer
+  searchKey: SearchReducer
 })
 
 export default rootReducers

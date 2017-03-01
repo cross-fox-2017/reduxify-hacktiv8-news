@@ -7,21 +7,29 @@ const styles = {
   padding: '0px 10px'
 }
 
-import { searchNews } from '../../actions'
+import { searchNews, resetSearchKey } from '../../actions'
 // handleChange={this.handleChange.bind(this)}
 
 const DataSearch = (props) => {
   return (
-    <form>
-      <label>
-        Search:
-      </label>
-      <input
-        style={styles}
-        value={props.searchKey}
-        type='text'
-        onChange={props.handleChange} />
-    </form>
+    <div>
+      <form>
+        <label>
+          Search:
+        </label>
+        <input
+          style={styles}
+          type='text'
+          value={props.searchKey}
+          onChange={event => props.searchNews(event.target.value)} />
+      </form>
+      {props.searchKey !== '' ? <h6>Search Result for: {props.searchKey}</h6> : <h6>Showing All Results</h6>}
+      <br />
+      {props.searchKey !== '' ?
+         <button onClick={props.resetSearchKey}>
+           Reset Search
+         </button> : true}
+    </div>
   )
 }
 
@@ -32,7 +40,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({searchNews}, dispatch)
+  return bindActionCreators({searchNews, resetSearchKey}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataSearch)
