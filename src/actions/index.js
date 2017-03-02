@@ -13,7 +13,24 @@ export const resetSearchKey = () => {
 
 export const setPeoples = (peoples) => {
   return {
-    type: 'SET_DATA',
+    type: 'SET_PEOPLES',
     payload: peoples
   }
 }
+
+export const setNews = (news) => {
+  return {
+    type: 'SET_NEWS',
+    payload: news
+  }
+}
+
+// fetchNews (searchKey) {
+//   fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURI(searchKey)}`)
+//     .then((response) => {
+//       return response.json()
+//     })
+//     .then((resp) => {
+//       this.props.setNews(resp.hits)
+//     })
+// }

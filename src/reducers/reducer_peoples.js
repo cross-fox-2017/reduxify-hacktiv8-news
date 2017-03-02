@@ -1,6 +1,6 @@
 const PeoplesReducer = (state = '' , action) => {
   switch (action.type) {
-    case 'SET_DATA':
+    case 'SET_PEOPLES':
       return action.payload
     default:
       return state
