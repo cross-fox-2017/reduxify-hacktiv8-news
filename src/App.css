@@ -18,6 +18,27 @@
   font-size: large;
 }
 
+.App-list {
+  margin-left: 20px;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  margin-left: -35px;
+  display: inline-block;
+}
+
+.menu-list {
+  display: inline-block;
+  margin: 15px;
+}
+
+.style-text {
+  font-family: 'crimson text';
+  font-size: 26px;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
