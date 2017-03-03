@@ -6,7 +6,8 @@ import './index.css'
 import rootReducers from './reducers'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-const createStoreMiddleware = applyMiddleware()(createStore)
+import thunk from 'redux-thunk'
+const createStoreMiddleware = applyMiddleware(thunk)(createStore)
 
 ReactDOM.render(
   <Provider store={createStoreMiddleware(rootReducers)}>

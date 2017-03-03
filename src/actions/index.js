@@ -25,12 +25,26 @@ export const setNews = (news) => {
   }
 }
 
-// fetchNews (searchKey) {
-//   fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURI(searchKey)}`)
-//     .then((response) => {
-//       return response.json()
-//     })
-//     .then((resp) => {
-//       this.props.setNews(resp.hits)
-//     })
-// }
+export const fetchNews = (searchKey = '') => {
+  return (dispatch) => {
+    fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURI(searchKey)}`)
+      .then(response => {
+        return response.json()
+      })
+      .then(resp => {
+        return dispatch(setNews(resp.hits))
+      })
+  }
+}
+
+export const fetchPeoples = () => {
+  return (dispatch) => {
+    fetch('https://swapi.co/api/people')
+      .then((response) => {
+        return response.json()
+      })
+      .then((resp) => {
+        return dispatch(setPeoples(resp.results))
+      })
+  }
+}

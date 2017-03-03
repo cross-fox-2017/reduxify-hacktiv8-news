@@ -5,16 +5,18 @@ const style = {
   display: 'inline-block'
 }
 
-export const Menu = () => (
-  <ul>
-    <li style={style}>
-      <Link to='/'> Home
-      </Link>
-    </li>
-    {'  |  '}
-    <li style={style}>
-      <Link to='/about'> About
-      </Link>
-    </li>
-  </ul>
-)
+export const Menu = () => {
+  return (
+    <ul>
+      <li style={style}>
+        <Link to='/'> Home
+        </Link>
+      </li>
+      {'  |  '}
+      <li style={style}>
+        <Link to='/about'> About
+        </Link>
+      </li>
+    </ul>
+  )
+}

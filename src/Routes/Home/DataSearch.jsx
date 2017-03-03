@@ -2,12 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import { setSearchKey, resetSearchKey } from '../../actions'
+
 const styles = {
   width: '30%',
   padding: '0px 10px'
 }
-
-import { setSearchKey, resetSearchKey } from '../../actions'
 
 const DataSearch = (props) => {
   return (
@@ -20,12 +20,23 @@ const DataSearch = (props) => {
           style={styles}
           type='text'
           value={props.searchKey}
-          onChange={event => props.setSearchKey(event.target.value)} />
+          onChange={(event) => {props.setSearchKey(event.target.value)}}
+        />
       </form>
-      {props.searchKey !== '' ? <h6>Search Result for: {props.searchKey}</h6> : <h6>Showing All Results</h6>}
-      {props.searchKey !== '' ? <button className='btn' onClick={props.resetSearchKey}>
-                                  Reset Search
-                                </button> : true}
+      {props.searchKey !== ''
+        ?
+        <h6>Search Result for: {props.searchKey}</h6>
+        :
+        <h6>Showing All Results</h6>
+      }
+      {props.searchKey !== ''
+        ?
+        <button className='btn' onClick={props.resetSearchKey}>
+          Reset Search
+        </button>
+        :
+        true
+      }
     </div>
   )
 }
