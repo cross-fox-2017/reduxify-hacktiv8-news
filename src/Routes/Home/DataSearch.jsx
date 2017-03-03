@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { fetchNews, resetSearchKey } from '../../actions'
+import { fetchNews, setSearchKey, resetSearchKey } from '../../actions'
 
 const styles = {
   width: '30%',
@@ -11,7 +11,7 @@ const styles = {
 
 class DataSearch extends Component {
   componentDidMount () {
-    this.props.fetchNews()
+    this.props.fetchNews('')
   }
 
   render () {
@@ -25,7 +25,10 @@ class DataSearch extends Component {
             style={styles}
             type='text'
             value={this.props.searchKey}
-            onChange={(event) => {this.props.fetchNews(event.target.value)}}
+            onChange={(event) => {
+              this.props.setSearchKey(event.target.value)
+              this.props.fetchNews(event.target.value)
+            }}
           />
         </form>
         {this.props.searchKey !== ''
@@ -54,7 +57,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchNews, resetSearchKey}, dispatch)
+  return bindActionCreators({fetchNews, setSearchKey, resetSearchKey}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(DataSearch)
