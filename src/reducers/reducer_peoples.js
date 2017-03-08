@@ -1,4 +1,4 @@
-const PeoplesReducer = (state = '' , action) => {
+const PeoplesReducer = (state = [] , action) => {
   switch (action.type) {
     case 'SET_PEOPLES':
       return action.payload
